@@ -4,15 +4,17 @@ using UnityEngine;
 public class SpikeScript : MonoBehaviour
 {
     [SerializeField] private float speed = 10f; // Time it takes to complete one movement
-    [SerializeField] private Vector3 spikeSize = new Vector3(0.5f, 5f, 0.5f);
+    [SerializeField] private Vector3 spikeSize = new(0.5f, 5f, 0.5f);
     [SerializeField] private float pauseDuration = 0.1f; // Pause duration at the end of each movement
 
+    private Rigidbody rb;
     private Vector3 originalPosition;
     private Vector3 targetPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         originalPosition = transform.position;
         targetPosition = new Vector3(originalPosition.x, originalPosition.y + spikeSize.y, originalPosition.z);
         StartCoroutine(SpikeCycle());
@@ -44,7 +46,7 @@ public class SpikeScript : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / duration);
+            rb.MovePosition(Vector3.Lerp(startPosition, endPosition, elapsedTime / duration));
             elapsedTime += Time.deltaTime;
             yield return null;
         }

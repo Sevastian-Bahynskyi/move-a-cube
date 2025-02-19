@@ -35,10 +35,11 @@ public class ArenaWallsScript : MonoBehaviour
         TransformArena();
     }
 
-    private void OnValidate()
-    {
-        TransformArena();
-    }
+    // // Uncomment if live update is needed
+    // private void OnValidate()
+    // {
+    //     TransformArena();
+    // }
 
     private void TransformArena()
     {

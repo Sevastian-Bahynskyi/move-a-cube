@@ -28,10 +28,9 @@ public class PlayerScript : MonoBehaviour
     
     void OnJump()
     {
-        const int jumpForceMultiplier = 3;
         if (isGrounded)
         {
-            rb.AddForce(Vector3.up * jumpForce * jumpForceMultiplier, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
     }

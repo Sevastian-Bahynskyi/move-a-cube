@@ -770,7 +770,7 @@ PlayerSettings:
   cloudProjectId: 708fda29-3df1-4d81-8179-69cb58572e5c
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Test3D
+  projectName: move-a-cube
   organizationId: sevastian-bahynskyi
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
