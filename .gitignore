@@ -2,6 +2,15 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+
+Assets/**
+
+# Except the Scripts folder
+!Assets/Scripts/
+
+# But keep only .cs files inside Scripts
+!Assets/Scripts/*.cs
+
 .utmp/
 /[Ll]ibrary/
 /[Tt]emp/
