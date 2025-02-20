@@ -37,3 +37,4 @@ As soon as the player spawns, the game begins. Static, falling, rolling, moving,
   - Be lifted by the obstacle, but the behavior isn't always smooth
 - Time-consuming: Procedural obstacle generation
   - When combined with ArenaController’s automated adjustments, this can make each level unique and challenging
+- Player can't jump from obstacle, only from the ground

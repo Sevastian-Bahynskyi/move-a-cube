@@ -11,6 +11,9 @@ Assets/**
 # But keep only .cs files inside Scripts
 !Assets/Scripts/*.cs
 
+.plastic
+ignore.conf
+
 .utmp/
 /[Ll]ibrary/
 /[Tt]emp/
