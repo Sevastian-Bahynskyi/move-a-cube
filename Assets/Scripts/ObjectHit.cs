@@ -6,16 +6,7 @@ using UnityEngine;
 
 public class ObjectHit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-    
+    [SerializeField] private Material hitObjectMaterial;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -27,9 +18,10 @@ public class ObjectHit : MonoBehaviour
         if (!player.CompareTag("Player") || gameObject.CompareTag("Hit"))
             return;
 
-        GetComponent<MeshRenderer>().material.color = Color.red;
+        GetComponent<MeshRenderer>().material = hitObjectMaterial;
         gameObject.tag = "Hit";
-        gameObject.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(renderer => renderer.material.color = Color.red);
+        gameObject.GetComponentsInChildren<MeshRenderer>().ToList()
+            .ForEach(meshRenderer => meshRenderer.material = hitObjectMaterial);
         Console.WriteLine(gameObject.name);
 
         Scorer scorer = player.GetComponent<Scorer>();
